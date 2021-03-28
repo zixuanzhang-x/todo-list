@@ -1,24 +1,20 @@
-# todo-list
+# CSCI 5117 Spring 2021 -- Module 2 Homework
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Instructions can be [found on canvas](https://canvas.umn.edu/courses/217951/pages/homework-2)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Please fill out all of the following sections to help us grade your submission:
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Student (to be completed individually)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* First Last, x500@umn.edu
+
+## Link to Site
+
+<https://TODO.herokuapp.com/>
+
+## Challenge Task
+
+* I started the challenge task: [yes/no]
+* I completed the challenge task: [yes/no]
+
