@@ -2,6 +2,16 @@
   <div class="todos">
     <div class="columns">
       <div class="column is-one-quarter">
+        <div class="logout">
+          <button @click.prevent="signOut" class="button">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fas fa-sign-out-alt"></i>
+              </span>
+              <span>Log out</span>
+            </span>
+          </button>
+        </div>
         <Menu :uid="user.uid" :categories="settings[0].categories" />
       </div>
       <div class="column">
@@ -28,14 +38,40 @@ export default {
   props: ["category"],
   data() {
     return {
-      user: null,
-      settings: [],
+      user: { uid: "" },
+      settings: [
+        {
+          uid: "",
+          categories: [],
+        },
+      ],
     };
   },
   beforeCreate() {
     auth.onAuthStateChanged((user) => {
       if (user) {
         this.user = user;
+
+        // console.log(user.uid);
+        // console.log(db.collection("settings").doc(auth.currentUser.uid));
+        // console.log(!db.collection("settings").doc(auth.currentUser.uid));
+        // if (!db.collection("settings").doc(auth.currentUser.uid)) {
+        //   db.collection("settings").doc(auth.currentUser.uid).set(
+        //     {
+        //       categories: [],
+        //       uid: auth.currentUser.uid,
+        //     },
+        //     { merge: true }
+        //   );
+        // }
+
+        db.collection("settings").doc(auth.currentUser.uid).set(
+            {
+              // categories: [],
+              uid: auth.currentUser.uid,
+            },
+            { merge: true }
+          );
       }
     });
   },
@@ -50,11 +86,27 @@ export default {
       },
     },
   },
+  methods: {
+    signOut() {
+      auth
+        .signOut()
+        .then(() => {
+          this.user = null;
+          this.$router.push("/");
+        })
+        .catch((error) => console.log(error));
+    },
+  },
 };
 </script>
 
 <style scoped>
 .todos {
   margin: 20px;
+}
+
+.logout {
+  font-size: 16px;
+  margin: 10px;
 }
 </style>

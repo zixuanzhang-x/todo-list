@@ -79,7 +79,7 @@ export default {
       todo: {
         title: "",
         notes: "",
-        category: "School",
+        category: "",
       },
     };
   },

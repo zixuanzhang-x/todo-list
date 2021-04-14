@@ -41,7 +41,7 @@
           </ul>
         </li>
         <li>
-          <router-link to="/todos" >
+          <router-link to="/todos">
             <span class="icon-text">
               <span class="icon">
                 <i class="fas fa-tasks"></i>
@@ -66,12 +66,12 @@
         </li>
 
         <li>
-          <router-link to="/">
+          <router-link to="/newcategory">
             <span class="icon-text">
               <span class="icon">
                 <i class="fas fa-plus"></i>
               </span>
-              <span>New Category</span>
+              <span>Add/Del Category</span>
             </span>
           </router-link>
         </li>

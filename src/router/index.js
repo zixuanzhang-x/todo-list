@@ -5,6 +5,7 @@ import TodosPage from "@/views/TodosPage.vue";
 import TodoPage from "@/views/TodoPage.vue";
 import DonePage from "@/views/DonePage.vue";
 import NotFoundPage from "@/views/NotFoundPage.vue";
+import NewCategoryPage from "@/views/NewCategoryPage.vue";
 
 import { auth } from "@/firebaseConfig.js";
 
@@ -55,6 +56,14 @@ const routes = [
     name: "DonePage",
     component: DonePage,
     props: true,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/newcategory",
+    name: "NewCategoryPage",
+    component: NewCategoryPage,
     meta: {
       requiresAuth: true,
     },

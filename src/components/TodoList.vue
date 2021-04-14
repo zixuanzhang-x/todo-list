@@ -69,7 +69,7 @@ export default {
             "todos",
             db
               .collection("todos")
-              .where("uid", "==", "QtPz44U2CSNNfUKzwl3zj43UQkQ2")
+              .where("uid", "==", this.uid)
               .where("done", "==", this.done)
               .where("category", "==", category)
           );
@@ -78,7 +78,7 @@ export default {
             "todos",
             db
               .collection("todos")
-              .where("uid", "==", "QtPz44U2CSNNfUKzwl3zj43UQkQ2")
+              .where("uid", "==", this.uid)
               .where("done", "==", this.done)
           );
         }
